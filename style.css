@@ -84,5 +84,19 @@ h3 span {
 
 .share-button {
     display: flex;
+    float: right;
+    background-color: hsl(210, 46%, 95%);
+    border-radius: 50%;
+    padding-right: 40px;
+    padding: 5px;
+    margin-right: 40px;
+    
+  
+    
+
+    
+
+    
+    
     
 }
