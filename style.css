@@ -1,106 +1,216 @@
 * {
-   
     margin: 0;
     padding: 0;
-   
+   box-sizing: border-box;
 }
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
 }
 
 h1 {
-    font-family: "manrope";
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     color: hsl(217, 19%, 35%);
-    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 260px;
+    line-height: 1.5;
 }
 
 h2 {
-    font-family: "manrope";
     font-weight: 500;
     font-size: 13px;
     color: hsl(214, 17%, 51%);
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 260px;
+    line-height: 1.5;
 }
-
-h3 {
-    font-family: "manrope";
-    font-weight: 700;
-    color: hsl(217, 19%, 35%);
-    padding-left: 40px;
-    font-size: 15px;
-}
-h3 span {
-    font-weight: 500;
-    font-size: 13px;
-    color : hsl(214, 17%, 51%);
-}
-
-.card-image {
-  display: flex;
-
-    
-   
-}
-
 
 .card-container  {
     display: flex;
-   width: 400px;
-   height: 250px;
-   border-radius: 10px;
-    overflow: hidden; 
-    width: 700px; 
+    flex-direction: column;
+    position: absolute;
+    width: 340px;
+ border-radius: 10px;
     background-color: #fff; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.card-image {
+    background: url("images/drawers.jpg") center no-repeat;
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius:10px ;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
     
-    
-  
-
-
-
 
 }
 
 .card-text {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-   padding-left: 30px;
-   padding-top: 20px;
+}
+
+.card-footer {
+    display: grid;
+    grid-template-columns: 1fr 178px 1fr;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+   
+    width: 260px;
 }
 
 .lady-image img {
-    display: flex;
-    height: 30px;
+    width: 40px;
     border-radius: 50%;
-    position: absolute;
-    
-    
+}
+
+.footer-text p {
+    color: #8a939c;
+    font-weight: 200;
+    padding-left: 20px;
+}
+
+.footer-text p:first-child {
+    color: #48556a;
+    font-weight: 700;
+    padding-bottom: 8px;
 }
 
 .share-button {
-    display: flex;
-    float: right;
     background-color: hsl(210, 46%, 95%);
     border-radius: 50%;
-    padding-right: 40px;
-    padding: 5px;
-    margin-right: 40px;
-    margin-top: 10px;
-   
-    
-  
-    
-
-    
-
-    
-    
-    
+    height: 30px;
+    width: 30px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
 }
 
+.share-menu {
+    background-color: #48556a;
+    height: 70px;
+    width: 340px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+    grid-template-columns: 2fr 1fr;
+}
 
+.share-menu.active {
+    display: grid;
+}
+
+.share-menu .social-media {
+    text-align: center;
+    align-content: center;
+}
+
+.share-menu .social-media span {
+    color: #6d7f97;
+    letter-spacing: 4px;
+}
+
+.share-menu .social-media i {
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+.social-return-button {
+    background-color: #6d7f97;
+    border-radius: 50%;
+    color: #edf2f8;
+    height: 30px;
+    width: 30px;
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    .card-container {
+        flex-direction: row;
+        width: 670px;
+        height: 270px;
+    }
+
+    .card-image {
+        background-position: left;
+        height: 100%;
+        width: 265px;
+    }
+
+    .card-content {
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 350px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        width: 350px;
+        
+    }
+
+    .card-footer {
+        width: 350px;
+        grid-template-columns: 1fr 4fr 1fr;
+        margin-top: 40px;
+    }
+
+    .share-menu {
+        border-radius: 10px;
+        position: absolute;
+        bottom: 90px;
+        left: 500px;
+        grid-template-columns: 1fr;
+        height: 50px;
+        width: 230px;
+    }
+
+    .share-menu::before {
+        border-top: 15px solid #48556a;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        content: '';
+        position: absolute;
+        width: 0;
+        top: 49px;
+        left: 100px;
+        
+    }
+
+    .social-return-button {
+        display: none;
+    }
+}
